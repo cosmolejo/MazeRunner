@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html>
+<title>LABERINTO</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Chakra Petch' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet'>
+
+<head>
+  <style>
+    body, html {
+      height: 100%
+    }
+
+    h1 {
+      font-family: 'Monoton';
+      font-size: 60px;
+    }
+
+    body, h2, h3, h4, h5 {
+      font-family: 'Chakra Petch';
+      font-size: 15px;
+    }
+
+    h6, a {
+      font-family: 'Chakra Petch';
+      font-size: 19px;
+    }
+
+    .menu {
+      display: none
+    }
+
+    .bgimg {
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("/w3images/pizza.jpg");
+      min-height: 90%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nagevación -->
+  <nav class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-center" style="display:none" id="mySidebar">
+    <h1 class="w3-xxxlarge w3-text-theme">TAMAÑO</h1>
+    <br>
+    <a href="laberinto.html" class="w3-bar-item w3-button" onClick="abrir18x18()" >18x18</a>
+    <a href="laberinto.html" class="w3-bar-item w3-button" onClick="abrir20x20()" >20x20</a>
+    <a href="laberinto.html" class="w3-bar-item w3-button" onClick="abrir22x22()" >22x22</a>
+    <a href="laberinto.html" class="w3-bar-item w3-button" onClick="abrir24x24()" >24x24</a>
+    <a href="laberinto.html" class="w3-bar-item w3-button" onClick="abrir26x26()" >26x26</a>
+    <h6 class="w3-bar-item w3-button" onclick="cerrar()">
+    <i class="fa fa-remove"></i>
+    </h6>
+  </nav>
+
+  <!-- Cabecero -->
+  <header class="w3-container w3-theme w3-padding" id="myHeader">
+    <div class="w3-center">
+      <br><br><br>
+      <h1 class="w3-xxxlarge w3-animate-bottom" onclick="abrir()">LABERINTO</h1>
+      <br><br><br>
+    </div>
+  </header>
+
+  <br>
+  <!-- Contenedores -->
+  <div class="center">
+    <div class="w3-row-padding w3-center w3-margin-top">
+
+      <div class="w3-half">
+        <div class="w3-card white">
+          <div class="w3-container w3-theme">
+            <br><h3>DOCUMENTACIÓN</h3><br>
+          </div>
+          <ul class="w3-ul w3-border-top">
+            <li>
+              <br><h3 onclick="códigoFuente()">CÓDIGO FUENTE</h3><br>
+            </li>
+            <li>
+              <br><h3 onClick="manualTécnico()">MANUAL TÉCNICO</h3><br>
+            </li>
+            <li>
+              <br><h3 onClick="manualDeUsuario()">MANUAL DE USUARIO</h3><br>
+            </li>
+          </ul>
+          <div class="w3-container w3-theme w3-large">
+            <span class="w3-right">&nbsp;</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-card white">
+          <div class="w3-container w3-theme">
+            <br><h3>INSTRUCCIONES</h3><br>
+          </div>
+          <ul class="w3-ul w3-border-top">
+            <li>
+              <br><h3>PRESIONE "LABERINTO"</h3><br>
+            </li>
+            <li>
+              <br><h3>SELECCIONE EL TAMAÑO</h3><br>
+            </li>
+            <li>
+              <br><h3>VEA LAS SOLUCIONES</h3><br>
+            </li>
+          </ul>
+          <div class="w3-container w3-theme w3-large">
+            <span class="w3-right">&nbsp;</span>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <br>
+
+
+  <script>
+    /**
+     * Abre la ventana de selección de tamaño.
+     */
+    function abrir() {
+      var x = document.getElementById("mySidebar");
+      x.style.width = "100%";
+      x.style.fontSize = "40px";
+      x.style.paddingTop = "10%";
+      x.style.display = "block";
+    }
+    /**
+     * Cierra la ventana de selección de tamaño.
+     */
+    function cerrar() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+    /**
+     * Selecciona como tamaño 18x18.
+     */
+    function abrir18x18() { localStorage.tamaño=18; }
+    /**
+     * Selecciona como tamaño 20x20.
+     */
+    function abrir20x20() { localStorage.tamaño=20; }
+    /**
+     * Selecciona como tamaño 22x22.
+     */
+    function abrir22x22() { localStorage.tamaño=22; }
+    /**
+     * Selecciona como tamaño 24x24.
+     */
+    function abrir24x24() { localStorage.tamaño=24; }
+    /**
+     * Selecciona como tamaño 26x26.
+     */
+    function abrir26x26() { localStorage.tamaño=26; }
+    /**
+     * Abre la sección del código fuente.
+     */
+    function códigoFuente(){
+      window.open("https://github.com/cosmolejo/MazeRunner.git");
+    } 
+    /**
+     * Abre la sección del manual técnico.
+     */ 
+    function manualTécnico(){
+      window.open("https://cosmolejo.github.io/MazeDoc/");
+    }
+    /**
+     * Abre la sección del manual de usuario.
+     */
+    function manualDeUsuario(){
+      window.open("https://google.com");
+    }
+
+  </script>
+
+</body>
+
+</html>
